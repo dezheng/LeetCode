@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace Main
 {
@@ -26,14 +24,26 @@ namespace Main
         //请注意，你的答案必须是 子串 的长度，"pwke" 是一个子序列，不是子串。
         public int LengthOfLongestSubstring(string s)
         {
-            var length = s.Length;
-            if (length < 2)
+            var list = new List<char>();
+            var maxCount = 0;
+            foreach (var t in s)
             {
-                return length;
+                if (!list.Contains(t))
+                {
+                    list.Add(t);
+                    if (list.Count > maxCount)
+                    {
+                        maxCount = list.Count;
+                    }
+                }
+                else
+                {
+                    list.RemoveRange(0, list.IndexOf(t) + 1);
+                    list.Add(t);
+                }
             }
 
-
-            return 0;
+            return maxCount;
         }
     }
 }
