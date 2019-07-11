@@ -3074,5 +3074,37 @@ namespace Test
     77916 });
             _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
         }
+        [Fact]
+        public void LetterCombinationsTest()
+        {
+            var a = new Solution();
+            var result = a.LetterCombinations("23");
+            _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
+        }
+        [Fact]
+        public void IsValidTest()
+        {
+            var a = new Solution();
+            var result = a.IsValid("()[]]{}");
+            _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
+        }
+        [Fact]
+        public void GenerateParenthesisTest()
+        {
+            var a = new Solution();
+            for (int i = 0; i < 10; i++)
+            {
+                var result = a.GenerateParenthesis(i + 1);
+                _testOutputHelper.WriteLine(result.Count.ToString());
+            }
+        }
+        [Fact]
+        public void TrapTest()
+        {
+            var a = new Solution();
+            var result = a.Trap(new[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
+            _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
+
+        }
     }
 }
