@@ -1,5 +1,6 @@
 using Main;
 using System;
+using Main.≈≈–Ú;
 using Newtonsoft.Json;
 using Xunit;
 using Xunit.Abstractions;
@@ -3103,6 +3104,22 @@ namespace Test
         {
             var a = new Solution();
             var result = a.Trap(new[] { 0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1 });
+            _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
+
+        }
+
+        [Fact]
+        public void SelectTest()
+        {
+            var result = Sort.SelectionSort(new[] { 3, 2, 1, 4, 5, 6 });
+            _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
+
+        }
+
+        [Fact]
+        public void InsertionSortTest()
+        {
+            var result = Sort.InsertionSort(new[] { 3, 2, 1, 4, 5, 6 });
             _testOutputHelper.WriteLine(JsonConvert.SerializeObject(result));
 
         }
